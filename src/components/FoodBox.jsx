@@ -1,20 +1,20 @@
 import './FoodBox.css'
 
-function FoodBox(props) {
+function FoodBox({food, deleteFood}) {
   return (
     <div className='food-box'>
-      <h2>{props.food.name}</h2>
+      <h2>{food.name}</h2>
 
-      <img src={props.food.image} />
+      <img src={food.image} />
 
-      <p>Calories: {props.food.calories}</p>
-      <p>Servings {props.food.servings}</p>
+      <p>Calories: {food.calories}</p>
+      <p>Servings: {food.servings}</p>
 
       <p>
-        <b>Total Calories: {props.food.servings * props.food.calories} </b> kcal
+        <b>Total Calories: {food.servings * food.calories} </b> kcal
       </p>
 
-      <button onClick={()=> props.deleteFood(props.food.id)}>Delete</button>
+      <button onClick={()=> deleteFood(food.id)}>Delete</button>
     </div>
   );
 }
